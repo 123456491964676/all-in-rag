@@ -47,22 +47,14 @@ prompt = ChatPromptTemplate.from_template("""请根据下面提供的上下文�
 
 # 配置大语言模型
 
-# 使用 AIHubmix
+# 使用 QWEN 模型
 llm = ChatOpenAI(
-    model="glm-4.7-flash-free",
+    model="qwen-plus",
     temperature=0.7,
     max_tokens=4096,
-    api_key=os.getenv("DEEPSEEK_API_KEY"),
-    base_url="https://aihubmix.com/v1"
+    api_key=os.getenv("QWEN_API_KEY"),
+    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 )
-
-# llm = ChatOpenAI(
-#     model="deepseek-chat",
-#     temperature=0.7,
-#     max_tokens=4096,
-#     api_key=os.getenv("DEEPSEEK_API_KEY"),
-#     base_url="https://api.deepseek.com"
-# )
 
 # 用户查询
 question = "文中举了哪些例子？"
