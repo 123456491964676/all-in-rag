@@ -4,6 +4,8 @@
 
 ## 一、大模型 API 配置
 
+1.1和1.2选一个就行，但是我使用的是qwen
+
 ### 1.1 AIHubmix API 申请
 
 AIHubmix 是一个美国平台，公司注册在美国的特拉华州，一站式聚合了全球主流的 AI 模型，最新的模型通常能在发布当天最晚不超过 1 周就会支持。完全对接相关模型的云厂商（OpenAI 对接的是 Azure 云，Gemini 对接的 Google 官方，Claude 对接的是 AWS，其他开源等模型是对接到各大知名云厂商或者推理公司）。AIHubmix 的服务器是在美国谷歌云上采用集群部署，同时因为完全对接云厂商，所以稳定性非常好，有多端点路由机制，可以达到比直连官方更稳定的效果。
@@ -287,6 +289,11 @@ Cloud Studio 是腾讯云推出的一款基于浏览器的集成开发环境（I
 1.  **创建虚拟环境**
 
     ```bash
+    # 查看有没有软件源
+    conda config --show channels
+    # 如果没有软件源，使用下面这个命令设置软件源，这不是官方软件源，官方软件源和这个的区别可以问AI
+    conda config --add channels conda-forge
+    # 创建虚拟环境
     conda create --name all-in-rag python=3.12.7
     ```
 
